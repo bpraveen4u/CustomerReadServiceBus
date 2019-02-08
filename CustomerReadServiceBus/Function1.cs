@@ -18,7 +18,7 @@ namespace CustomerReadServiceBus
 
             using (SqlConnection conn = new SqlConnection())
             {
-                conn.ConnectionString = "Server=tcp:customerdomainsrv.database.windows.net,1433;Initial Catalog=CustomerDomain;Persist Security Info=False;User ID=custlogin;Password=Password@3;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;";
+                conn.ConnectionString = "<conn string>";
                 conn.Open();
                 var sqlQuery = string.Format("insert into Customers (Id, Name, Address, Phone) values({0}, '{1}', '{2}', '{3}')", data.Id, data.Name, data.Address, data.Phone);
                 using (SqlCommand cmd = new SqlCommand(sqlQuery, conn))
